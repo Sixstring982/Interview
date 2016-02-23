@@ -1,0 +1,8 @@
+# Emacs stuff
+*~
+[#]*[#]
+
+# Rust target
+target/
+
+# Building a binary, so keeping Cargo.lock
