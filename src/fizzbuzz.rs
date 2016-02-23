@@ -22,7 +22,21 @@
 /// line containing all of the "Fizz", "Buzz", and "FizzBuzz" patterns
 /// listed above.
 fn fizz_buzz(limit: u32) -> String {
-    String::new()
+    let mut s = String::new();
+
+    /* limit is inclusive, so add 1 to it */
+    for i in 1..(limit + 1) {
+        let app = match i {
+            _ if (i % 3) == 0 && (i % 5) == 0 => "FizzBuzz".to_string(),
+            _ if (i % 3) == 0                 => "Fizz".to_string(),
+            _ if (i % 5) == 0                 => "Buzz".to_string(),
+            n                                 => n.to_string()
+        };
+
+        s = s + &app + "\n";
+    }
+
+    return s;
 }
 
 #[cfg(test)]
